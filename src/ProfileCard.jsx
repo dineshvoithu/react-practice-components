@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "./UserContext";
 
-const ProfileCard = ({ name, role }) => {
+const ProfileCard = () => {
+  const user = useContext(UserContext);
   return (
     <>
       <div>
-        <h3>Hello, {name} 👋</h3>
-        <h4>{role}</h4>
+        <h3>Hello, {user.name} 👋</h3>
+        <h4>{user.role}</h4>
       </div>
     </>
   );

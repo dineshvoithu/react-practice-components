@@ -11,11 +11,23 @@ import DemoEffect from "./DemoEffect";
 import CounterWithTitle from "./CounterWithTitle";
 import LiveClock from "./LiveClock";
 import UserList from "./UserList";
+import AutoFocusInput from "./AutoFocusInput";
+import PreviousCounter from "./PreviousCounter";
+import TimerApp from "./assets/TimerApp";
+import SimpleTimer from "./SimpleTimer";
+import UserContext from "./UserContext";
 
 function App() {
+  const user = {
+    name: "Dinesh",
+    role: "Frontend Developer",
+  };
   return (
     <>
-      <UserList />
+      <UserContext.Provider value={user}>
+        <ProfileCard />
+        <SimpleTimer />
+      </UserContext.Provider>
     </>
   );
 }
