@@ -16,6 +16,8 @@ import PreviousCounter from "./PreviousCounter";
 import TimerApp from "./assets/TimerApp";
 import SimpleTimer from "./SimpleTimer";
 import UserContext from "./UserContext";
+import ToggleLight from "./ToggleLight";
+import TodoReducerSwitch from "./TodoReducerSwitch";
 
 function App() {
   const user = {
@@ -25,8 +27,7 @@ function App() {
   return (
     <>
       <UserContext.Provider value={user}>
-        <ProfileCard />
-        <SimpleTimer />
+        <TodoReducerSwitch />
       </UserContext.Provider>
     </>
   );
