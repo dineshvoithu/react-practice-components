@@ -18,17 +18,27 @@ import SimpleTimer from "./SimpleTimer";
 import UserContext from "./UserContext";
 import ToggleLight from "./ToggleLight";
 import TodoReducerSwitch from "./TodoReducerSwitch";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Client from "./Client";
+import ClientDetails from "./ClientDetails";
+import React from "react";
 
 function App() {
-  const user = {
-    name: "Dinesh",
-    role: "Frontend Developer",
-  };
+  // const user = {
+  //   name: "Dinesh",
+  //   role: "Frontend Developer",
+  // };
   return (
     <>
-      <UserContext.Provider value={user}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Client />} />
+          <Route path="/client/:id" element={<ClientDetails />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <UserContext.Provider value={user}>
         <TodoReducerSwitch />
-      </UserContext.Provider>
+      </UserContext.Provider> */}
     </>
   );
 }
